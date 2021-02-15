@@ -124,3 +124,7 @@ hduser@mouadkamal-VirtualBox:~$ exit
 logout
 Connection to localhost closed.
 ```
+
+##### Etape 3 : Installation de JAVA 8
+
+[![](https://img.shields.io/badge/version-1.8.0_71-green.svg)]()
