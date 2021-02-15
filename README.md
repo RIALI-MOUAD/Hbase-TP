@@ -96,4 +96,31 @@ Number of key(s) added: 1
 Now try logging into the machine, with:   "ssh 'hduser@localhost'"
 and check to make sure that only the key(s) you wanted were added.
 ```
+On teste la connexion à localhost :
+```sh
+hduser@mouadkamal-VirtualBox:~$ ssh hduser@localhost
+Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 5.3.0-28-generic x86_64)
 
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+359 packages can be updated.
+292 updates are security updates.
+
+New release '20.04.2 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+Your Hardware Enablement Stack (HWE) is supported until April 2023.
+
+```
+```sh
+hduser@mouadkamal-VirtualBox:~$ exit
+logout
+Connection to localhost closed.
+```
