@@ -42,5 +42,58 @@ Adding user `hduser' to group `sudo' ...
 Adding user hduser to group sudo
 Done.
 ```
+D'abord on redémarre la machine virtuelle et on utilise le nouveau compte hduser.
 
+##### Etape 2 : Mise en place de la clé ssh
+
+On installe le paquet nécessaire pour ssh en tapant la commande :
+
+```sh 
+hduser@mouadkamal-VirtualBox:~$ sudo apt-get install openssh-server
+[sudo] password for hduser: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+openssh-server is already the newest version (1:7.6p1-4ubuntu0.3).
+```
+
+Maintenant, il faut mettre en place la clé ssh pour son propre compte. Pour cela,on exécute les commandes suivantes :
+```sh
+hduser@mouadkamal-VirtualBox:~$ ssh-keygen -t rsa -P ""
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/hduser/.ssh/id_rsa): 
+Created directory '/home/hduser/.ssh'.
+Your identification has been saved in /home/hduser/.ssh/id_rsa.
+Your public key has been saved in /home/hduser/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:69oKER0r+4CycvU+XmZjGZUN22+TxRGLVkXWBBf3m8I hduser@mouadkamal-VirtualBox
+The key's randomart image is:
++---[RSA 2048]----+
+|      .   .   .O%|
+|     . o   *  o+*|
+|    o o   + oo .+|
+|   . +   .  o. oo|
+|. . =   S    E=o |
+| o . =   +   ... |
+|o . . o O        |
+|..   o.B .       |
+|     .=+o        |
++----[SHA256]-----+
+```
+
+```sh
+hduser@mouadkamal-VirtualBox:~$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+hduser@mouadkamal-VirtualBox:~$ chmod 0600 ~/.ssh/authorized_keys
+```
+
+On copie la clé public sur le serveur localhost :
+```sh
+hduser@mouadkamal-VirtualBox:~$ ssh-copy-id -i /home/hduser/.ssh/id_rsa.pub -f hduser@localhost
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/hduser/.ssh/id_rsa.pub"
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh 'hduser@localhost'"
+and check to make sure that only the key(s) you wanted were added.
+```
 
