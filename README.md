@@ -129,3 +129,18 @@ Connection to localhost closed.
 ![](https://www.racam.fr/wp-content/uploads/2018/06/Screenshot_2018-07-20-java-8-Recherche-Google.png)
 
 [![](https://img.shields.io/badge/version-1.8.0-green.svg)](https://docs.datastax.com/en/jdk-install/doc/jdk-install/installOracleJdkDeb.html)
+
+On installe ***JAVA 8*** dans le répertoire **/opt/java** :
+```sh
+hduser@mouadkamal-VirtualBox:~$ sudo mkdir /opt/java
+[sudo] password for hduser: 
+hduser@mouadkamal-VirtualBox:~$ ls -R /opt
+/opt:
+java
+
+/opt/java:
+```
+On extrait l'archive en utilisant la commande tar comme indiqué ci-dessous :
+```sh
+
+```
