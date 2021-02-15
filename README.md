@@ -178,7 +178,7 @@ hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ sudo mkdir -p /usr/local/hadoop
 hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ sudo chown -R hduser /usr/local/hadoop_store
 ```
 
-##### Etape 5 :
+##### Etape 5 : Configuration d'Apache Hadoop 3.2.1
 
 On modifie le fichier :**.bashrc** en ajoutant les lignes suivantes à la fin du fichier :
 ```sh
@@ -200,3 +200,11 @@ export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_INSTALL/lib/native
 ```
 Maintenant,on ouvre le fichier /usr/local/hadoop/etc/hadoop/hadoop-env.sh et on modifie la variable d'environnement
 JAVA_HOME :
+```sh
+# The java implementation to use. By default, this environment
+# variable is REQUIRED on ALL platforms except OS X!
+export JAVA_HOME=/opt/java/jdk1.8.0_71/
+# Location of Hadoop.  By default, Hadoop will attempt to determine
+# this location based upon its execution path.
+# export HADOOP_HOME=
+```
