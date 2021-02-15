@@ -5,6 +5,7 @@
 ### 1- Préparation de l’environnement :
 
 #### Installation de "Apache Hadoop" :
+![](https://hadoop.apache.org/hadoop-logo.jpg)
 
 [![](https://img.shields.io/badge/version-3.2.1-green.svg)](https://archive.apache.org/dist/hadoop/core/hadoop-3.2.1/hadoop-3.2.1.tar.gz)
 [![Generic badge](https://img.shields.io/badge/size-359.2MB-green.svg)](https://shields.io/)
