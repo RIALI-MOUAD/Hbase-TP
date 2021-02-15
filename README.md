@@ -162,4 +162,10 @@ export JAVA_HOME=/opt/java/jdk1.8.0_71/
 export JRE_HOME=/opt/java/jdk1.8.0._71/jre
 export PATH=$PATH:/opt/java/jdk1.8.0_71/bin:/opt/java/jdk1.8.0_71/jre/bin
 ```
+Après avoir enregistré le fichier profile,on exécute la commande source pour recharger le fichier (en tant que root et avec l'utilisateur hadoop) :
+```sh
+~$ source /etc/profile
+~$ source .bashrc
+```
+
 
