@@ -142,5 +142,7 @@ java
 ```
 On extrait l'archive en utilisant la commande tar comme indiqué ci-dessous :
 ```sh
-
+hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ tar -zxvf jdk-8u71-linux-x64.tar.gz
+hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ sudo mv jdk1.8.0_71/ /opt/java/
 ```
+
