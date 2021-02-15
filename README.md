@@ -198,7 +198,7 @@ export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_INSTALL/lib/native
 #export HADOOP_OPTS="­Djava.library.path=$HADOOP_INSTALL/lib"
 #HADOOP VARIABLES END
 ```
-Maintenant,on ouvre le fichier /usr/local/hadoop/etc/hadoop/hadoop-env.sh et on modifie la variable d'environnement
+Maintenant,on ouvre le fichier ***/usr/local/hadoop/etc/hadoop/hadoop-env.sh*** et on modifie la variable d'environnement
 JAVA_HOME :
 ```sh
 # The java implementation to use. By default, this environment
@@ -207,4 +207,60 @@ export JAVA_HOME=/opt/java/jdk1.8.0_71/
 # Location of Hadoop.  By default, Hadoop will attempt to determine
 # this location based upon its execution path.
 # export HADOOP_HOME=
+```
+Et On crée le répertoire des fichiers temporaires de hadoop :
+```sh
+hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ sudo mkdir -p /app/hadoop/tmp
+hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ sudo chown hduser /app/hadoop/tmp
+```
+> On modifie d'abord des fichiers pour la configuration de Hadoop 
+
+On ouvre le fichier ***core-site.xml*** et entrez ce qui suit entre <configuration> et </ configuration> :
+```xml
+<configuration>
+<property>
+<name>hadoop.tmp.dir</name>
+<value>/app/hadoop/tmp</value>
+</property>
+<property>
+<name>fs.default.name</name>
+<value>hdfs://localhost:54310</value>
+</property>
+</configuration>
+```
+le fichier ***hdfs-site.xml*** et entrez ce qui suit entre <configuration> et </ configuration> :
+
+```xml
+<configuration>
+<property>
+<name>dfs.replication</name>
+<value>1</value>
+</property>
+<property>
+<name>dfs.namenode.name.dir</name>
+<value>file:/usr/local/hadoop_store/hdfs/namenode</value>
+</property>
+<property>
+<name>dfs.datanode.data.dir</name>
+<value>file:/usr/local/hadoop_store/hdfs/datanode</value>
+</property>
+</configuration>
+```
+le fichier ***mapred-site.xml*** et entrer ce qui suit entre <configuration> et </ configuration> :
+```xml
+<configuration>
+<property>
+<name>mapred.job.tracker</name>
+<value>localhost:54311</value>
+</property>
+</configuration>
+```
+le fichier ***yarn-site.xml*** et entrer ce qui suit entre <configuration> et </ configuration> :
+```xml
+<configuration>
+<property>
+<name>yarn.nodemanager.aux-services</name>
+<value>mapreduce_shuffle</value>
+</property>
+</configuration>
 ```
