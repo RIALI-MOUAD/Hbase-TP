@@ -145,4 +145,21 @@ On extrait l'archive en utilisant la commande tar comme indiqué ci-dessous :
 hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ tar -zxvf jdk-8u71-linux-x64.tar.gz
 hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ sudo mv jdk1.8.0_71/ /opt/java/
 ```
+On utilise la commande update-alternatives pour dire au système où java et ses exécutables sont installés.
+```sh
+mouad-kamal@mouadkamal-VirtualBox:/home/hduser$ sudo update-alternatives --install /usr/bin/java java /opt/java/jdk1.8.0_71/bin/java 100
+update-alternatives: using /opt/java/jdk1.8.0_71/bin/java to provide /usr/bin/java (java) in auto mode
+```
+```sh
+mouad-kamal@mouadkamal-VirtualBox:/home/hduser$ update-alternatives --config java
+There is only one alternative in link group java (providing /usr/bin/java): /opt/java/jdk1.8.0_71/bin/java
+Nothing to configure.
+```
+
+Maintenant,on met à jour aussi javac alternatives,et on ouvre le fichier **/etc/profile** en ecrivant :
+```sh
+export JAVA_HOME=/opt/java/jdk1.8.0_71/
+export JRE_HOME=/opt/java/jdk1.8.0._71/jre
+export PATH=$PATH:/opt/java/jdk1.8.0_71/bin:/opt/java/jdk1.8.0_71/jre/bin
+```
 
