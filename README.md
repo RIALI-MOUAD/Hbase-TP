@@ -215,7 +215,7 @@ hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ sudo chown hduser /app/hadoop/t
 ```
 > On modifie d'abord des fichiers pour la configuration de Hadoop 
 
-On ouvre le fichier ***core-site.xml*** et entrez ce qui suit entre <configuration> et </ configuration> :
+On ouvre le fichier ***core-site.xml*** et on entre ce qui suit entre <configuration> et </ configuration> :
 ```xml
 <configuration>
 <property>
@@ -228,7 +228,7 @@ On ouvre le fichier ***core-site.xml*** et entrez ce qui suit entre <configurati
 </property>
 </configuration>
 ```
-le fichier ***hdfs-site.xml*** et entrez ce qui suit entre <configuration> et </ configuration> :
+le fichier ***hdfs-site.xml*** et on entre ce qui suit entre <configuration> et </ configuration> :
 
 ```xml
 <configuration>
@@ -246,7 +246,7 @@ le fichier ***hdfs-site.xml*** et entrez ce qui suit entre <configuration> et </
 </property>
 </configuration>
 ```
-le fichier ***mapred-site.xml*** et entrer ce qui suit entre <configuration> et </ configuration> :
+le fichier ***mapred-site.xml*** et on entre ce qui suit entre <configuration> et </ configuration> :
 ```xml
 <configuration>
 <property>
@@ -255,7 +255,7 @@ le fichier ***mapred-site.xml*** et entrer ce qui suit entre <configuration> et 
 </property>
 </configuration>
 ```
-le fichier ***yarn-site.xml*** et entrer ce qui suit entre <configuration> et </ configuration> :
+le fichier ***yarn-site.xml*** et on entre ce qui suit entre <configuration> et </ configuration> :
 ```xml
 <configuration>
 <property>
