@@ -5,4 +5,7 @@
 ### 1- Préparation de l’environnement :
 
 #### Installation de "Apache Hadoop" :
-[![Generic badge](https://img.shields.io/badge/release-2.7.4-green.svg)](https://shields.io/)
+
+[![Generic badge](https://img.shields.io/badge/version-3.2.1-green.svg)](https://shields.io/)
+
+[![Generic badge](https://img.shields.io/badge/size-359.2MB-green.svg)](https://shields.io/)
