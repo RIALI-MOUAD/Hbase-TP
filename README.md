@@ -126,6 +126,6 @@ Connection to localhost closed.
 ```
 
 ##### Etape 3 : Installation de JAVA 8
-![](https://www.kiuwan.com/wp-content/uploads/2017/01/java8-icon-281x300.png)
+![](https://www.racam.fr/wp-content/uploads/2018/06/Screenshot_2018-07-20-java-8-Recherche-Google.png)
 
 [![](https://img.shields.io/badge/version-1.8.0-green.svg)](https://docs.datastax.com/en/jdk-install/doc/jdk-install/installOracleJdkDeb.html)
