@@ -11,7 +11,7 @@
 [![Generic badge](https://img.shields.io/badge/size-359.2MB-green.svg)](https://shields.io/)
 
 ##### Etape 1 : Création d'un utilisateur hduser :
-```
+```shell
 mouad-kamal@mouadkamal-VirtualBox:~$ sudo adduser hduer
 [sudo] password for mouad-kamal: 
 Adding user `hduer' ...
