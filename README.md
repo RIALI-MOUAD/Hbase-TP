@@ -168,6 +168,15 @@ Après avoir enregistré le fichier profile,on exécute la commande source pour 
 ~$ source .bashrc
 ```
 ##### Etape 4 : Installation d'Apache Hadoop 3.2.1
+```sh
+hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ tar -zxvf hadoop-3.2.1.tar.gz
+hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ mv hadoop-3.2.1 hadoop
+hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ sudo mv hadoop /usr/local/hadoop/
+hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ sudo chown -R hduser /usr/local/hadoop
+hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ sudo mkdir -p /usr/local/hadoop_store/hdfs/namenode
+hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ sudo mkdir -p /usr/local/hadoop_store/hdfs/datanode
+hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ sudo chown -R hduser /usr/local/hadoop_store
+```
 
 ##### Etape 5 :
 
@@ -189,5 +198,5 @@ export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_INSTALL/lib/native
 #export HADOOP_OPTS="­Djava.library.path=$HADOOP_INSTALL/lib"
 #HADOOP VARIABLES END
 ```
-
-
+Maintenant,on ouvre le fichier /usr/local/hadoop/etc/hadoop/hadoop-env.sh et on modifie la variable d'environnement
+JAVA_HOME :
