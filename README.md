@@ -35,10 +35,12 @@ Enter the new value, or press ENTER for the default
 	Home Phone []: 
 	Other []: 
 Is the information correct? [Y/n] 
+```
+```sh
 mouad-kamal@mouadkamal-VirtualBox:~$ sudo adduser hduser sudo
 Adding user `hduser' to group `sudo' ...
 Adding user hduser to group sudo
 Done.
-
 ```
+
 
