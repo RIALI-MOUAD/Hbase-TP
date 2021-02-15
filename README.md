@@ -167,5 +167,27 @@ Après avoir enregistré le fichier profile,on exécute la commande source pour 
 ~$ source /etc/profile
 ~$ source .bashrc
 ```
+##### Etape 4 : Installation d'Apache Hadoop 3.2.1
+
+##### Etape 5 :
+
+On modifie le fichier :**.bashrc** en ajoutant les lignes suivantes à la fin du fichier :
+```sh
+export JAVA_HOME=/opt/java/jdk1.8.0_71/
+export JRE_HOME=/opt/java/jdk1.8.0._71/jre
+export PATH=$PATH:/opt/java/jdk1.8.0_71/bin:/opt/java/jdk1.8.0_71/jre/bin
+#HADOOP VARIABLES START
+export JAVA_HOME=/opt/java/jdk1.8.0_71/
+export HADOOP_INSTALL=/usr/local/hadoop
+export PATH=$PATH:$HADOOP_INSTALL/bin
+export PATH=$PATH:$HADOOP_INSTALL/sbin
+export HADOOP_MAPRED_HOME=$HADOOP_INSTALL
+export HADOOP_COMMON_HOME=$HADOOP_INSTALL
+export HADOOP_HDFS_HOME=$HADOOP_INSTALL
+export YARN_HOME=$HADOOP_INSTALL
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_INSTALL/lib/native
+#export HADOOP_OPTS="­Djava.library.path=$HADOOP_INSTALL/lib"
+#HADOOP VARIABLES END
+```
 
 
