@@ -394,3 +394,38 @@ Type :help for more information.
 
 scala> 
 ```
+###### Connexion de Spark à une distribution de Hadoop :
+
+```sh
+  GNU nano 2.9.3                    spark-env.sh                     Modified  
+
+# - SPARK_HISTORY_OPTS, to set config properties only for the history server ($
+# - SPARK_SHUFFLE_OPTS, to set config properties only for the external shuffle$
+# - SPARK_DAEMON_JAVA_OPTS, to set config properties for all daemons (e.g. "-D$
+# - SPARK_DAEMON_CLASSPATH, to set the classpath for all daemons
+# - SPARK_PUBLIC_DNS, to set the public dns name of the master or workers
+
+# Generic options for the daemons used in the standalone deploy mode
+# - SPARK_CONF_DIR      Alternate conf dir. (Default: ${SPARK_HOME}/conf)
+# - SPARK_LOG_DIR       Where log files are stored.  (Default: ${SPARK_HOME}/l$
+# - SPARK_PID_DIR       Where the pid file is stored. (Default: /tmp)
+# - SPARK_IDENT_STRING  A string representing this instance of spark. (Default$
+# - SPARK_NICENESS      The scheduling priority for daemons. (Default: 0)
+# - SPARK_NO_DAEMONIZE  Run the proposed command in the foreground. It will no$
+# Options for native BLAS, like Intel MKL, OpenBLAS, and so on.
+# You might get better performance to enable these options if using native BLA$
+# - MKL_NUM_THREADS=1        Disable multi-threading of Intel MKL
+# - OPENBLAS_NUM_THREADS=1   Disable multi-threading of OpenBLAS
+### in conf/spark-env.sh ###
+# If 'hadoop' binary is on your PATH
+export SPARK_DIST_CLASSPATH=/usr/local/hadoop
+# With explicit path to 'hadoop' binary
+export SPARK_DIST_CLASSPATH=/usr/local/hadoop/bin
+# Passing a Hadoop configuration directory
+export SPARK_DIST_CLASSPATH=/usr/local/hadoop/etc/hadoop
+
+
+^G Get Help    ^O Write Out   ^W Where Is    ^K Cut Text    ^J Justify
+^X Exit        ^R Read File   ^\ Replace     ^U Uncut Text  ^T To Linter
+
+```
