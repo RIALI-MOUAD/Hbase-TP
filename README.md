@@ -7,7 +7,7 @@
 #### Installation de "Apache Hadoop" :
 ![](https://hadoop.apache.org/hadoop-logo.jpg)
 
-[![](https://img.shields.io/badge/version-3.2.1-green.svg)](https://archive.apache.org/dist/hadoop/core/hadoop-3.2.1/hadoop-3.2.1.tar.gz)
+[![](https://img.shields.io/badge/version-2.7.4-green.svg)](https://archive.apache.org/dist/hadoop/core/hadoop-2.7.4/hadoop-2.7.4.tar.gz)
 [![Generic badge](https://img.shields.io/badge/size-359.2MB-green.svg)](https://shields.io/)
 
 ##### Etape 1 : Création d'un utilisateur hduser :
@@ -167,10 +167,10 @@ Après avoir enregistré le fichier profile,on exécute la commande source pour 
 ~$ source /etc/profile
 ~$ source .bashrc
 ```
-##### Etape 4 : Installation d'Apache Hadoop 3.2.1
+##### Etape 4 : Installation d'Apache Hadoop 2.7.4
 ```sh
-hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ tar -zxvf hadoop-3.2.1.tar.gz
-hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ mv hadoop-3.2.1 hadoop
+hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ tar -zxvf hadoop-2.7.4.tar.gz
+hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ mv hadoop-2.7.4 hadoop
 hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ sudo mv hadoop /usr/local/hadoop/
 hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ sudo chown -R hduser /usr/local/hadoop
 hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ sudo mkdir -p /usr/local/hadoop_store/hdfs/namenode
@@ -178,7 +178,7 @@ hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ sudo mkdir -p /usr/local/hadoop
 hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ sudo chown -R hduser /usr/local/hadoop_store
 ```
 
-##### Etape 5 : Configuration d'Apache Hadoop 3.2.1
+##### Etape 5 : Configuration d'Apache Hadoop 2.7.4
 
 On modifie le fichier :**.bashrc** en ajoutant les lignes suivantes à la fin du fichier :
 ```sh
@@ -211,10 +211,10 @@ export JAVA_HOME=/opt/java/jdk1.8.0_71/
 Et On crée le répertoire des fichiers temporaires de hadoop :
 ```sh
 hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ sudo mkdir -p /app/hadoop/tmp
-hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ sudo chown hduser /app/hadoop/tmp
+hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ sudo chown -R hduser /app/hadoop/tmp
 ```
 > On modifie d'abord des fichiers pour la configuration de Hadoop 
-
+Dans le rep ***/usr/local/hadoop/etc/hadoop/*** :
 On ouvre le fichier ***core-site.xml*** et on entre ce qui suit entre <configuration> et </ configuration> :
 ```xml
 <configuration>
