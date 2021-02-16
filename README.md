@@ -640,3 +640,4 @@ Cache Remaining%: 0.00%
 Xceivers: 1
 Last contact: Tue Feb 16 22:55:29 WET 2021
 ```
+![](https://raw.githubusercontent.com/RIALI-MOUAD/Hbase-Media/main/Hdfs-Report.png?token=ALA3YFZY23OIFNMKXWQICJLAFRHWS)
