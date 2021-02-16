@@ -307,3 +307,5 @@ hduser@mouadkamal-VirtualBox:/usr/local/hadoop/etc/hadoop$ jps
 
 #### Installation et configuration de spark en local :
 ![](https://spark.apache.org/images/spark-logo-trademark.png)
+[![](https://img.shields.io/badge/version-2.4.3-green.svg)](https://archive.apache.org/dist/spark/spark-2.4.3/spark-2.4.3-bin-hadoop2.7.tgz)
+[![Generic badge](https://img.shields.io/badge/size-230MB-green.svg)](https://shields.io/)
