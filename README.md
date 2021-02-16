@@ -600,4 +600,43 @@ STARTUP_MSG:   version = 2.7.4
 SHUTDOWN_MSG: Shutting down NameNode at localhost/127.0.0.1
 ************************************************************/
 ```
+```sh
+hduser@mouadkamal-VirtualBox:/usr/local/hadoop$ start-all.sh
+This script is Deprecated. Instead use start-dfs.sh and start-yarn.sh
+21/02/16 22:54:36 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Starting namenodes on [localhost]
+localhost: starting namenode, logging to /usr/local/hadoop/logs/hadoop-hduser-namenode-mouadkamal-VirtualBox.out
+localhost: starting datanode, logging to /usr/local/hadoop/logs/hadoop-hduser-datanode-mouadkamal-VirtualBox.out
+Starting secondary namenodes [0.0.0.0]
+0.0.0.0: starting secondarynamenode, logging to /usr/local/hadoop/logs/hadoop-hduser-secondarynamenode-mouadkamal-VirtualBox.out
+21/02/16 22:54:59 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+starting yarn daemons
+starting resourcemanager, logging to /usr/local/hadoop/logs/yarn-hduser-resourcemanager-mouadkamal-VirtualBox.out
+localhost: starting nodemanager, logging to /usr/local/hadoop/logs/yarn-hduser-nodemanager-mouadkamal-VirtualBox.out
+```
+et enfin, pour tester a quel point on a configure Hadoop, on execute :
+```sh
+hduser@mouadkamal-VirtualBox:/usr/local/hadoop$ hdfs dfsadmin -report
+```
+dans notre cas on a :
+```sh
+-------------------------------------------------
+Live datanodes (1):
 
+Name: 127.0.0.1:50010 (localhost)
+Hostname: localhost
+Decommission Status : Normal
+Configured Capacity: 10499674112 (9.78 GB)
+DFS Used: 24576 (24 KB)
+Non DFS Used: 8140304384 (7.58 GB)
+DFS Remaining: 1805803520 (1.68 GB)
+DFS Used%: 0.00%
+DFS Remaining%: 17.20%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 1
+Last contact: Tue Feb 16 22:55:29 WET 2021
+```
