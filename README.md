@@ -439,3 +439,8 @@ export SPARK_DIST_CLASSPATH=/usr/local/hadoop/etc/hadoop
 ^X Exit        ^R Read File   ^\ Replace     ^U Uncut Text  ^T To Linter
 
 ```
+#### 3-Installation et configuration d’Apache Hbase :
+
+![](https://hbase.apache.org/images/hbase_logo_with_orca_large.png)
+[![](https://img.shields.io/badge/version-1.4.7-green.svg)](https://archive.apache.org/dist/hbase/1.4.7/hbase-1.4.7-bin.tar.gz)
+[![Generic badge](https://img.shields.io/badge/size-118MB-green.svg)](https://shields.io/)
