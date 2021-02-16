@@ -483,8 +483,9 @@ export HADOOP_COMMON_HOME=$HADOOP_INSTALL
 export HADOOP_HDFS_HOME=$HADOOP_INSTALL
 export YARN_HOME=$HADOOP_INSTALL
 export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_INSTALL/lib/native
-export HADOOP_OPTS="­Djava.library.path=$HADOOP_INSTALL/lib/native"
+#export HADOOP_OPTS="-Djava.library.path=$HADOOP_INSTALL/lib"
 #HADOOP VARIABLES END
+
 
 export SPARK_HOME=/usr/local/spark
 export PATH=$PATH:$SPARK_HOME/bin
@@ -566,3 +567,6 @@ ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 ```
 Pour prendre les modifications en compte, on redémarre notre machine.
+
+#### 3- Démarrage du cluster Hadoop configuré dans la machine "Hbase" :
+
