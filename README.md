@@ -306,4 +306,4 @@ hduser@mouadkamal-VirtualBox:/usr/local/hadoop/etc/hadoop$ jps
 ![](https://raw.githubusercontent.com/RIALI-MOUAD/Hbase-Media/main/Hadoop2.png)
 
 #### Installation et configuration de spark en local :
-![](https://www.onlinebooksreview.com/uploads/blog_images/2017/11/27_file.png)
+![](https://spark.apache.org/images/spark-logo-trademark.png)
