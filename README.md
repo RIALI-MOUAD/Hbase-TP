@@ -711,4 +711,17 @@ hduser@mouadkamal-VirtualBox:/usr/local/hbase$ jps
 5111 Jps
 3115 DataNode
 ```
+> Voila !! 
+```sh
+hduser@mouadkamal-VirtualBox:/usr/local/hbase$ hbase shell
+```
+```sh
+HBase Shell
+Use "help" to get list of supported commands.
+Use "exit" to quit this interactive shell.
+Version 1.4.7, r763f27f583cf8fd7ecf79fb6f3ef57f1615dbf9b, Tue Aug 28 14:40:11 PDT 2018
+
+hbase(main):001:0> 
+
+```
 
