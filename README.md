@@ -679,11 +679,11 @@ Alors le fichier ***hbase-site.xml*** devient :
 <configuration>
  <property>
    <name>hbase.rootdir</name>
-   <value>file:///home/user/hbase</value>
+   <value>file:///home/mouad-kamal/hbase</value>
  </property>
  <property>
    <name>hbase.zookeeper.property.dataDir</name>
-   <value>/home/user/zookeeper</value>
+   <value>/home/mouad-kamal/zookeeper</value>
  </property>
  <property>
    <name>hbase.unsafe.stream.capability.enforce</name>
