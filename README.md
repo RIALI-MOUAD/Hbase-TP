@@ -649,11 +649,11 @@ Pour installer HBase en mode Standalone, on ajoute les lignes suivantes dans le 
 ```xml
  <property>
    <name>hbase.rootdir</name>
-   <value>file:///home/user/hbase</value>
+   <value>file:///home/mouad-kamal/hbase</value>
  </property>
  <property>
    <name>hbase.zookeeper.property.dataDir</name>
-   <value>/home/user/zookeeper</value>
+   <value>/home/mouad-kamal/zookeeper</value>
  </property>
  <property>
    <name>hbase.unsafe.stream.capability.enforce</name>
@@ -703,5 +703,12 @@ Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=128m; sup
 ```
 > Avec :
 ```sh
-
+hduser@mouadkamal-VirtualBox:/usr/local/hbase$ jps
+3521 ResourceManager
+4785 HMaster
+3682 NodeManager
+2950 NameNode
+5111 Jps
+3115 DataNode
 ```
+
