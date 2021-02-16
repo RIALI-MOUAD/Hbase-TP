@@ -346,3 +346,51 @@ The following packages were automatically installed and are no longer required:
   fonts-liberation2 fonts-opensymbol gir1.2-gst-plugins-base-1.0
 ...etc
 ```
+Apres, on aura le resultat suivant :
+```sh
+hduser@mouadkamal-VirtualBox:/usr/local/spark$ ./bin/pyspark
+Python 2.7.17 (default, Sep 30 2020, 13:38:04) 
+[GCC 7.5.0] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+21/02/16 01:15:56 WARN Utils: Your hostname, mouadkamal-VirtualBox resolves to a loopback address: 127.0.1.1; using 10.0.2.15 instead (on interface enp0s3)
+21/02/16 01:15:56 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+21/02/16 01:15:59 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /__ / .__/\_,_/_/ /_/\_\   version 2.4.3
+      /_/
+
+Using Python version 2.7.17 (default, Sep 30 2020 13:38:04)
+SparkSession available as 'spark'.
+>>> 
+```
+et :
+```sh
+hduser@mouadkamal-VirtualBox:/usr/local/spark$ ./bin/spark-shell
+21/02/16 01:18:09 WARN Utils: Your hostname, mouadkamal-VirtualBox resolves to a loopback address: 127.0.1.1; using 10.0.2.15 instead (on interface enp0s3)
+21/02/16 01:18:09 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+21/02/16 01:18:16 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+Spark context Web UI available at http://10.0.2.15:4040
+Spark context available as 'sc' (master = local[*], app id = local-1613438315750).
+Spark session available as 'spark'.
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /___/ .__/\_,_/_/ /_/\_\   version 2.4.3
+      /_/
+         
+Using Scala version 2.11.12 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_71)
+Type in expressions to have them evaluated.
+Type :help for more information.
+
+scala> 
+```
