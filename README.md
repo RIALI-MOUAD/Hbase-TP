@@ -444,3 +444,63 @@ export SPARK_DIST_CLASSPATH=/usr/local/hadoop/etc/hadoop
 ![](https://hbase.apache.org/images/hbase_logo_with_orca_large.png)
 [![](https://img.shields.io/badge/version-1.4.7-green.svg)](https://archive.apache.org/dist/hbase/1.4.7/hbase-1.4.7-bin.tar.gz)
 [![Generic badge](https://img.shields.io/badge/size-118MB-green.svg)](https://shields.io/)
+
+##### 1- Récupérer les fichiers sources de Hbase :
+> Voire version Badge!!
+##### 2- Décompresser le fichier récupéré dans le répertoire de votre choix :
+on va repeter les memes etapes qu'on a deja fait avec **Apache Hadoop** et **Apache Spark** Alors on execute les commandes suivantes :
+```sh
+hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ tar -zxvf hbase-1.4.7-bin.tar.gz
+```
+```sh
+hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ ls
+hbase-1.4.7  hbase-1.4.7-bin.tar.gz  TP1_Hadoop.pdf  TP2.pdf
+hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ mv hbase-1.4.7 hbase
+hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ sudo mv hbase /usr/local/
+[sudo] password for hduser: 
+```
+##### 3- Configurer le PATH dans le .bashrc :
+on ajoute les lignes suivantes au fichier ***.bashrc*** afin de configurer le PATH vers ***Hbase*** repertoire :
+```sh
+export HBASE_HOME=/usr/local/hbase
+export PATH=$PATH:$HBASE_HOME/bin
+```
+d'ou on aura :
+```sh 
+  GNU nano 2.9.3                       .bashrc                       Modified  
+
+
+export JAVA_HOME=/opt/java/jdk1.8.0_71/
+export JRE_HOME=/opt/java/jdk1.8.0._71/jre
+export PATH=$PATH:/opt/java/jdk1.8.0_71/bin:/opt/java/jdk1.8.0_71/jre/bin
+#HADOOP VARIABLES START
+export JAVA_HOME=/opt/java/jdk1.8.0_71/
+export HADOOP_INSTALL=/usr/local/hadoop
+export PATH=$PATH:$HADOOP_INSTALL/bin
+export PATH=$PATH:$HADOOP_INSTALL/sbin
+export HADOOP_MAPRED_HOME=$HADOOP_INSTALL
+export HADOOP_COMMON_HOME=$HADOOP_INSTALL
+export HADOOP_HDFS_HOME=$HADOOP_INSTALL
+export YARN_HOME=$HADOOP_INSTALL
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_INSTALL/lib/native
+export HADOOP_OPTS="­Djava.library.path=$HADOOP_INSTALL/lib/native"
+#HADOOP VARIABLES END
+
+export SPARK_HOME=/usr/local/spark
+export PATH=$PATH:$SPARK_HOME/bin
+
+export HBASE_HOME=/usr/local/hbase
+export PATH=$PATH:$HBASE_HOME/bin
+
+
+
+
+^G Get Help    ^O Write Out   ^W Where Is    ^K Cut Text    ^J Justify
+^X Exit        ^R Read File   ^\ Replace     ^U Uncut Text  ^T To Spell
+```
+
+Ensuite, pour maintenir les modifications et mettre a jour le fichier **.bashrc** on tape:
+```sh 
+hduser@mouadkamal-VirtualBox:~$ source .bashrc
+```
+
