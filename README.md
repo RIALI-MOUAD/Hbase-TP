@@ -291,3 +291,12 @@ hduser@mouadkamal-VirtualBox:/usr/local/hadoop/etc/hadoop$ start-yarn.sh
 Starting resourcemanager
 Starting nodemanagers
 ```
+```sh
+hduser@mouadkamal-VirtualBox:/usr/local/hadoop/etc/hadoop$ jps
+5345 DataNode
+6005 NodeManager
+5846 ResourceManager
+5190 NameNode
+5562 SecondaryNameNode
+6381 Jps
+```
