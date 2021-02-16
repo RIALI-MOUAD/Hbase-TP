@@ -570,3 +570,34 @@ Pour prendre les modifications en compte, on redémarre notre machine.
 
 #### 3- Démarrage du cluster Hadoop configuré dans la machine "Hbase" :
 
+on execute les commandes suivantes :
+```sh
+hduser@mouadkamal-VirtualBox:/usr/local/hadoop$ cd ../hadoop_store
+hduser@mouadkamal-VirtualBox:/usr/local/hadoop_store$ rm -rf *
+hduser@mouadkamal-VirtualBox:/usr/local/hadoop_store$ mkdir -p /usr/local/hadoop_store/hdfs/namenode
+hduser@mouadkamal-VirtualBox:/usr/local/hadoop_store$ mkdir -p /usr/local/hadoop_store/hdfs/datanode
+hduser@mouadkamal-VirtualBox:/usr/local/hadoop_store$ chown -R hduser /usr/local/hadoop_store/hdfs/datanode
+hduser@mouadkamal-VirtualBox:/usr/local/hadoop_store$ chown -R hduser /usr/local/hadoop_store/hdfs/namenode
+```
+```sh
+hduser@mouadkamal-VirtualBox:/usr/local/hadoop_store$ cd ../hadoop
+hduser@mouadkamal-VirtualBox:/usr/local/hadoop$ hdfs namenode -format
+21/02/16 22:51:55 INFO namenode.NameNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting NameNode
+STARTUP_MSG:   host = localhost/127.0.0.1
+STARTUP_MSG:   args = [-format]
+STARTUP_MSG:   version = 2.7.4
+.
+.
+.
+.
+21/02/16 22:51:57 INFO namenode.FSImageFormatProtobuf: Image file /usr/local/hadoop_store/hdfs/namenode/current/fsimage.ckpt_0000000000000000000 of size 323 bytes saved in 0 seconds.
+21/02/16 22:51:57 INFO namenode.NNStorageRetentionManager: Going to retain 1 images with txid >= 0
+21/02/16 22:51:57 INFO util.ExitUtil: Exiting with status 0
+21/02/16 22:51:57 INFO namenode.NameNode: SHUTDOWN_MSG: 
+/************************************************************
+SHUTDOWN_MSG: Shutting down NameNode at localhost/127.0.0.1
+************************************************************/
+
+```
