@@ -300,3 +300,6 @@ hduser@mouadkamal-VirtualBox:/usr/local/hadoop/etc/hadoop$ jps
 5562 SecondaryNameNode
 6381 Jps
 ```
+> Voila !!
+
+![](https://drive.google.com/file/d/1GjG3jx6fiB7uB1u8dGt7r0galukdtd6U/view?usp=sharing)
