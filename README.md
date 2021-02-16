@@ -547,4 +547,21 @@ export JAVA_HOME=/opt/java/jdk1.8.0_71/
 ^X Exit        ^R Read File   ^\ Replace     ^U Uncut Text  ^T To Linter
 ```
 
+##### 5-Modification de /etc/hosts :
+Puisque dans ce TP nous allons travaillé avec un seul serveur, il faut modifier le fichier /etc/hosts pour modifier l’adresse de notre serveur de 127.0.1.1 à l’adresse 127.0.0.1, comme suit :
+```sh
+hduser@mouadkamal-VirtualBox:/usr/local/hbase$ sudo nano /etc/hosts
+```
+```sh
+  GNU nano 2.9.3                     /etc/hosts                      Modified  
 
+127.0.0.1       localhost
+127.0.0.1       mouadkamal-VirtualBox
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+```
