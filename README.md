@@ -641,3 +641,56 @@ Xceivers: 1
 Last contact: Tue Feb 16 22:55:29 WET 2021
 ```
 ![](https://raw.githubusercontent.com/RIALI-MOUAD/Hbase-Media/main/Hdfs-Report.png?token=ALA3YFZY23OIFNMKXWQICJLAFRHWS)
+
+##### 4- Configuration d’Apache Hbase pour un mode « Standalone » :
+Apres s'assurer que Hadoop deamons marchent bien on poursuit les etapes suivants :
+###### Configuration de « hbase-site.xml » pour un mode « Standalone » :
+Pour installer HBase en mode Standalone, on ajoute les lignes suivantes dans le ***« hbase-site.xml »*** entre <configuration> et </configuration> :
+```xml
+ <property>
+   <name>hbase.rootdir</name>
+   <value>file:///home/user/hbase</value>
+ </property>
+ <property>
+   <name>hbase.zookeeper.property.dataDir</name>
+   <value>/home/user/zookeeper</value>
+ </property>
+ <property>
+   <name>hbase.unsafe.stream.capability.enforce</name>
+   <value>false</value>
+ </property>
+```
+Alors le fichier ***hbase-site.xml*** devient :
+```xml
+  GNU nano 2.9.3                   hbase-site.xml                    Modified  
+
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<configuration>
+ <property>
+   <name>hbase.rootdir</name>
+   <value>file:///home/user/hbase</value>
+ </property>
+ <property>
+   <name>hbase.zookeeper.property.dataDir</name>
+   <value>/home/user/zookeeper</value>
+ </property>
+ <property>
+   <name>hbase.unsafe.stream.capability.enforce</name>
+   <value>false</value>
+ </property>
+           [ line 17/37 (45%), col 2/69 (2%), char 644/1248 (51%) ]
+^G Get Help    ^O Write Out   ^W Where Is    ^K Cut Text    ^J Justify
+^X Exit        ^R Read File   ^\ Replace     ^U Uncut Text  ^T To Spell
+
+```
