@@ -692,5 +692,16 @@ Alors le fichier ***hbase-site.xml*** devient :
            [ line 17/37 (45%), col 2/69 (2%), char 644/1248 (51%) ]
 ^G Get Help    ^O Write Out   ^W Where Is    ^K Cut Text    ^J Justify
 ^X Exit        ^R Read File   ^\ Replace     ^U Uncut Text  ^T To Spell
+```
+###### Lancement de Hbase pour un mode « Standalone » :
+on lance la commande suivante :
+```sh
+hduser@mouadkamal-VirtualBox:/usr/local/hbase$ ./bin/start-hbase.sh
+running master, logging to /usr/local/hbase/logs/hbase-hduser-master-mouadkamal-VirtualBox.out
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option PermSize=128m; support was removed in 8.0
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=128m; support was removed in 8.0
+```
+> Avec :
+```sh
 
 ```
