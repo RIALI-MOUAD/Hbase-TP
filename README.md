@@ -503,4 +503,48 @@ Ensuite, pour maintenir les modifications et mettre a jour le fichier **.bashrc*
 ```sh 
 hduser@mouadkamal-VirtualBox:~$ source .bashrc
 ```
+##### 4- Configuration du fichier « hbase-env.sh » :
+D'abord, il faut rappeler que ***Apache Hbase*** necessite **JAVA 8** - heureusement, on l'a deja installe-, alors il faut ajouter le chemin vers le ***JDK 8*** au fichier ***« hbase-env.sh »*** , d'ou vient l'utlite des commandes suivantes :
+```sh
+hduser@mouadkamal-VirtualBox:/usr/local/hbase$ ls conf
+hadoop-metrics2-hbase.properties  hbase-policy.xml  regionservers
+hbase-env.cmd                     hbase-site.xml
+hbase-env.sh                      log4j.properties
+```
+```sh
+hduser@mouadkamal-VirtualBox:/usr/local/hbase$ sudo nano conf/hbase-env.sh
+```
+```sh
+  GNU nano 2.9.3                  conf/hbase-env.sh                  Modified  
+
+
+# The directory where pid files are stored. /tmp by default.
+# export HBASE_PID_DIR=/var/hadoop/pids
+
+# Seconds to sleep between slave commands.  Unset by default.  This
+# can be useful in large clusters, where, e.g., slave rsyncs can
+# otherwise arrive faster than the master can service them.
+# export HBASE_SLAVE_SLEEP=0.1
+
+# Tell HBase whether it should manage it's own instance of Zookeeper or not.
+# export HBASE_MANAGES_ZK=true
+
+# The default log rolling policy is RFA, where the log file is rolled as per t$
+# RFA appender. Please refer to the log4j.properties file to see more details $
+# In case one needs to do log rolling on a date change, one should set the env$
+# HBASE_ROOT_LOGGER to "<DESIRED_LOG LEVEL>,DRFA".
+# For example:
+# HBASE_ROOT_LOGGER=INFO,DRFA
+# The reason for changing default to RFA is to avoid the boundary case of fill$
+# DRFA doesn't put any cap on the log size. Please refer to HBase-5655 for mor$
+export JAVA_HOME=/opt/java/jdk1.8.0_71/
+
+
+
+
+
+^G Get Help    ^O Write Out   ^W Where Is    ^K Cut Text    ^J Justify
+^X Exit        ^R Read File   ^\ Replace     ^U Uncut Text  ^T To Linter
+```
+
 
