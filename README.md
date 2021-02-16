@@ -303,3 +303,4 @@ hduser@mouadkamal-VirtualBox:/usr/local/hadoop/etc/hadoop$ jps
 > Voila !!
 
 ![](https://raw.githubusercontent.com/RIALI-MOUAD/Hbase-Media/main/Hadoop.png)
+![](https://raw.githubusercontent.com/RIALI-MOUAD/Hbase-Media/main/Hadoop2.png)
