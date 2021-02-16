@@ -395,7 +395,17 @@ Type :help for more information.
 scala> 
 ```
 ###### Connexion de Spark à une distribution de Hadoop :
+Pour utiliser ces packages de Hadoop, on doit modifier SPARK_DIST_CLASSPATH afin d’inclure les fichiers jar relatifs à ces packages. Pour ce faire, il est préférable d'ajouter une entrée dans ***conf/spark-env.sh*** :
+```sh
+hduser@mouadkamal-VirtualBox:/usr/local/spark$ cd conf
+hduser@mouadkamal-VirtualBox:/usr/local/spark/conf$ cp spark-env.sh.template spark-env.sh
+hduser@mouadkamal-VirtualBox:/usr/local/spark/conf$ sudo nano spark-env.sh
+[sudo] password for hduser: 
+Sorry, try again.
+[sudo] password for hduser: 
 
+```
+On va insérer le contenu suivant dans spark-env.sh :
 ```sh
   GNU nano 2.9.3                    spark-env.sh                     Modified  
 
