@@ -264,3 +264,16 @@ le fichier ***yarn-site.xml*** et on entre ce qui suit entre <configuration> et 
 </property>
 </configuration>
 ```
+Et on formate le Namenode :
+```sh
+hduser@mouadkamal-VirtualBox:/usr/local/hadoop/etc/hadoop$ hdfs namenode -format
+WARNING: /usr/local/hadoop/logs does not exist. Creating.
+2021-02-16 00:04:28,458 INFO namenode.NameNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting NameNode
+STARTUP_MSG:   host = mouadkamal-VirtualBox/127.0.1.1
+STARTUP_MSG:   args = [-format]
+STARTUP_MSG:   version = 3.2.1
+STARTUP_MSG:   classpath = /usr/local/hadoop/etc/hadoop:/usr/local/hadoop/share/hadoop/common/lib/jetty-server-9.3.24.v20180605.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-cli-1.2.jar:/usr/local/hadoop/share/hadoop/common/lib/kerby-util-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-logging-1
+...etc
+```
