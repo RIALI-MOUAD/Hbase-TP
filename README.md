@@ -309,3 +309,40 @@ hduser@mouadkamal-VirtualBox:/usr/local/hadoop/etc/hadoop$ jps
 ![](https://spark.apache.org/images/spark-logo-trademark.png)
 [![](https://img.shields.io/badge/version-2.4.3-green.svg)](https://archive.apache.org/dist/spark/spark-2.4.3/spark-2.4.3-bin-hadoop2.7.tgz)
 [![Generic badge](https://img.shields.io/badge/size-230MB-green.svg)](https://shields.io/)
+
+De même pour Apache Hadoop on va exécuter le code suivant :
+```sh
+hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ tar -zxvf spark-2.4.3-bin-hadoop2.7.tgz
+spark-2.4.3-bin-hadoop2.7/
+spark-2.4.3-bin-hadoop2.7/python/
+spark-2.4.3-bin-hadoop2.7/python/setup.cfg
+spark-2.4.3-bin-hadoop2.7/python/pyspark/
+spark-2.4.3-bin-hadoop2.7/python/pyspark/resultiterable.py
+spark-2.4.3-bin-hadoop2.7/python/pyspark/python/
+spark-2.4.3-bin-hadoop2.7/python/pyspark/python/pyspark/
+...etc
+```
+```sh
+hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ mv spark-2.4.3-bin-hadoop2.7 spark
+hduser@mouadkamal-VirtualBox:~/Desktop/BIG-DATA$ sudo mv spark /usr/local/
+[sudo] password for hduser: 
+```
+Ajouter les lignes suivantes au fichier ***.bashrc*** :
+```sh
+export SPARK_HOME=/usr/local/spark
+export PATH=$PATH:$SPARK_HOME/bin
+```
+```sh
+hduser@mouadkamal-VirtualBox:~$ source .bashrc
+```
+###### Installation Python :
+
+```sh 
+hduser@mouadkamal-VirtualBox:~$ sudo apt-get install python
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  fonts-liberation2 fonts-opensymbol gir1.2-gst-plugins-base-1.0
+...etc
+```
