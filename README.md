@@ -289,8 +289,10 @@ Starting secondary namenodes [0.0.0.0]
 ```
 ```sh
 hduser@mouadkamal-VirtualBox:/usr/local/hadoop/etc/hadoop$ start-yarn.sh
-Starting resourcemanager
-Starting nodemanagers
+starting yarn daemons
+starting resourcemanager, logging to /usr/local/hadoop/logs/yarn-hduser-resourcemanager-mouadkamal-VirtualBox.out
+localhost: starting nodemanager, logging to /usr/local/hadoop/logs/yarn-hduser-nodemanager-mouadkamal-VirtualBox.out
+
 ```
 ```sh
 hduser@mouadkamal-VirtualBox:/usr/local/hadoop/etc/hadoop$ jps
