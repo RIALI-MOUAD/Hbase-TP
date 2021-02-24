@@ -273,7 +273,7 @@ WARNING: /usr/local/hadoop/logs does not exist. Creating.
 STARTUP_MSG: Starting NameNode
 STARTUP_MSG:   host = mouadkamal-VirtualBox/127.0.1.1
 STARTUP_MSG:   args = [-format]
-STARTUP_MSG:   version = 3.2.1
+STARTUP_MSG:   version = 2.7.4
 STARTUP_MSG:   classpath = /usr/local/hadoop/etc/hadoop:/usr/local/hadoop/share/hadoop/common/lib/jetty-server-9.3.24.v20180605.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-cli-1.2.jar:/usr/local/hadoop/share/hadoop/common/lib/kerby-util-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-logging-1
 ...etc
 ```
@@ -281,9 +281,10 @@ Maintenant, il est temps de démarrer le cluster à nœud unique nouvellement in
 ```sh
 hduser@mouadkamal-VirtualBox:/usr/local/hadoop/etc/hadoop$ start-dfs.sh
 Starting namenodes on [localhost]
-Starting datanodes
-Starting secondary namenodes [mouadkamal-VirtualBox]
-mouadkamal-VirtualBox: Warning: Permanently added 'mouadkamal-virtualbox' (ECDSA) to the list of known hosts.
+localhost: starting namenode, logging to /usr/local/hadoop/logs/hadoop-hduser-namenode-mouadkamal-VirtualBox.out
+localhost: starting datanode, logging to /usr/local/hadoop/logs/hadoop-hduser-datanode-mouadkamal-VirtualBox.out
+Starting secondary namenodes [0.0.0.0]
+0.0.0.0: starting secondarynamenode, logging to /usr/local/hadoop/logs/hadoop-hduser-secondarynamenode-mouadkamal-VirtualBox.out
 2021-02-16 00:07:35,016 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
 ```
 ```sh
