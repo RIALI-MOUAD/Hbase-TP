@@ -1334,3 +1334,27 @@ package: Tp.myapp
 [INFO] ------------------------------------------------------------------------
 hduser@mouadkamal-VirtualBox:~/Downloads$ 
 ```
+```sh
+hduser@mouadkamal-VirtualBox:~/Downloads$ cd myapp
+hduser@mouadkamal-VirtualBox:~/Downloads/myapp$ mvn package
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building myapp 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.pom (8.1 kB at 5.6 kB/s)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/mave
+{...}
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.jar (184 kB at 137 kB/s)
+Downloaded: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.jar (208 kB at 133 kB/s)
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.jar (226 kB at 87 kB/s)
+[INFO] Building jar: /home/hduser/Downloads/myapp/target/myapp-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:14 min
+[INFO] Finished at: 2021-02-25T12:07:55Z
+[INFO] Final Memory: 18M/46M
+[INFO] ------------------------------------------------------------------------
+```
