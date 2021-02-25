@@ -1241,3 +1241,57 @@ COLUMN               CELL
 ![](https://maven.apache.org/images/maven-logo-black-on-white.png)
 [![](https://img.shields.io/badge/version-3.0.5-green.svg)](https://archive.apache.org/dist/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz)
 [![Generic badge](https://img.shields.io/badge/size-8.1MB-green.svg)](https://shields.io/)
+```sh
+hduser@mouadkamal-VirtualBox:~/Downloads$ tar -zxvf apache-maven-3.5.0-bin.tar.gz
+hduser@mouadkamal-VirtualBox:~/Downloads$ sudo mv apache-maven-3.5.0 /opt/ 
+```
+Pour mettre en place de manière permanente la variable d'environnement PATH pour tous les utilisateurs :
+On ouvre le fichier /etc/profile et modifie le PATH en ajoutant le chemin où se trouve le bin de maven dans export PATH :
+```sh
+export PATH=$PATH:/opt/java/jdk1.8.0_71/bin:/opt/java/jdk1.8.0_71/jre/bin::/opt/apache-maven-3.5.0/bin
+```
+Alors on aura :
+```sh
+  GNU nano 2.9.3                    /etc/profile                     Modified  
+
+      PS1='# '
+    else
+      PS1='$ '
+    fi
+  fi
+fi
+
+if [ -d /etc/profile.d ]; then
+  for i in /etc/profile.d/*.sh; do
+    if [ -r $i ]; then
+      . $i
+    fi
+  done
+  unset i
+fi
+
+export JAVA_HOME=/opt/java/jdk1.8.0_71/
+export JRE_HOME=/opt/java/jdk1.8.0._71/jre
+export PATH=$PATH:/opt/java/jdk1.8.0_71/bin:/opt/java/jdk1.8.0_71/jre/bin
+export PATH=$PATH:/opt/java/jdk1.8.0_71/bin:/opt/java/jdk1.8.0_71/jre/bin::/op$
+
+
+
+
+^G Get Help    ^O Write Out   ^W Where Is    ^K Cut Text    ^J Justify
+^X Exit        ^R Read File   ^\ Replace     ^U Uncut Text  ^T To Spell
+```
+```sh
+hduser@mouadkamal-VirtualBox:~/Downloads$ sudo nano /etc/profile
+hduser@mouadkamal-VirtualBox:~/Downloads$ source /etc/profile
+```
+```sh
+hduser@mouadkamal-VirtualBox:~/Downloads$ mvn -v
+Apache Maven 3.5.0 (ff8f5e7444045639af65f6095c62210b5713f426; 2017-04-03T20:39:06+01:00)
+Maven home: /opt/apache-maven-3.5.0
+Java version: 1.8.0_71, vendor: Oracle Corporation
+Java home: /opt/java/jdk1.8.0_71/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "5.3.0-28-generic", arch: "amd64", family: "unix"
+hduser@mouadkamal-VirtualBox:~/Downloads$ 
+```
