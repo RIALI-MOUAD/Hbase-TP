@@ -748,13 +748,6 @@ pour bien faire cette tache, il faut s'assurer que Hadoop est bien connecte :
 ```sh
 hduser@mouadkamal-VirtualBox:/usr/local/hbase$ hadoop fs -mkdir -p /hbase
 21/02/25 00:45:01 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-hduser@mouadkamal-VirtualBox:/usr/local/hbase$ ls
-bin          conf  file:          LEGAL  LICENSE.txt  NOTICE.txt
-CHANGES.txt  docs  hbase-webapps  lib    logs         README.txt
-```
-```sh
-hduser@mouadkamal-VirtualBox:/usr/local/hbase$ hadoop fs -mkdir -p /hduser/zookeeper
-21/02/25 00:46:26 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
 ```
 On vérifie avec la commande suivante que les répértoires sont bien créés :
 ```sh
@@ -763,7 +756,6 @@ hduser@mouadkamal-VirtualBox:/usr/local/hadoop/etc/hadoop$ hadoop fs -ls /
 21/02/25 00:48:44 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
 Found 2 items
 drwxr-xr-x   - hduser supergroup          0 2021-02-25 00:45 /hbase
-drwxr-xr-x   - hduser supergroup          0 2021-02-25 00:46 /hduser
 ```
 Pour installer HBase en mode pseudo-distribué, on ajoute les lignes suivantes dans le « hbase-site.xml » :
 > On accede d'abord au rep /usr/local/hbase/conf :
@@ -830,6 +822,29 @@ On peut s'assurer de port convenable en tapant la commande suivante :
 hduser@mouadkamal-VirtualBox:/usr/local/hbase/conf$ hdfs getconf -confKey fs.defaultFS
 21/02/25 02:05:55 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
 hdfs://localhost:54310
+```
+Enfin, on lance Hbase en executant la commande suivante :
+```sh
+hduser@mouadkamal-VirtualBox:/usr/local/hbase$ ./bin/start-hbase.sh
+localhost: running zookeeper, logging to /usr/local/hbase/bin/../logs/hbase-hduser-zookeeper-mouadkamal-VirtualBox.out
+running master, logging to /usr/local/hbase/logs/hbase-hduser-master-mouadkamal-VirtualBox.out
+: running regionserver, logging to /usr/local/hbase/logs/hbase-hduser-regionserver-mouadkamal-VirtualBox.out
+```
+
+> ***Et Voila !!***
+>
+```sh
+hduser@mouadkamal-VirtualBox:/usr/local/hbase$ jps
+2992 ResourceManager
+8017 HQuorumPeer
+2307 NameNode
+2739 SecondaryNameNode
+2467 DataNode
+8083 HMaster
+3159 NodeManager
+8457 Jps
+8205 HRegionServer
+hduser@mouadkamal-VirtualBox:/usr/local/hbase$ 
 ```
 
 
