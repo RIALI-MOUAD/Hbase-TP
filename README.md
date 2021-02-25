@@ -1451,5 +1451,84 @@ public class HbaseSparkProcess {
 ```
 On enregistre HbaseSparkProcess.java, et on lance la commande :
 ```sh
+hduser@mouadkamal-VirtualBox:~/Downloads/myapp$ mvn package
+```
+output:
+```sh
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for Tp.myapp:myapp:jar:1.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 17, column 11
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building myapp 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+Downloading: https://repo.maven.apache.org/maven2/org/apache/hbase/hbase/2.1.3/hbase-2.1.3.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/hbase/hbase/2.1.3/hbase-2.1.3.pom (150 kB at 89 kB/s)
+Downloading: https://repo.maven.apache.org/maven2/junit/junit/4.12/junit-4.12.pom
+Downloaded: https://repo.maven.apache.org/maven2/junit/junit/4.12/junit-4.12.pom (24 kB at 82 kB/s)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/hbase/hbase-spark/2.0.0-alpha4/hbase-spark-2.0.0-alpha4.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/hbase/hbase-spark/2.0.0-alpha4/hbase-spark-2.0.0-alpha4.pom (23 kB at 100 kB/s)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/hbase/hbase-build-configuration/2.0.0-alpha4/hbase-build-configuration-2.0.0-alpha4.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/hbase/hbase-build-configuration/2.0.0-alpha4/hbase-build-configuration-2.0.0-alpha4.pom (2.2 kB at 11 kB/s)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/hbase/hbase/2.0.0-alpha4/hbase-2.0.0-alpha4.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/hbase/hbase/2.0.0-alpha4/hbase-2.0.0-alpha4.pom (139 kB at 188 kB/s)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/hbase/thirdparty/hbase-shaded-miscellaneous/1.0.1/hbase-shaded-miscellaneous-1.0.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/hbase/thirdparty/hbase-shaded-miscellaneous/1.0.1/hbase-shaded-miscellaneous-1.0.1.pom (2.6 kB at 11 kB/s)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/hbase/thirdparty/hbase-thirdparty/1.0.1/hbase-thirdparty-1.0.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/hbase/thirdparty/hbase-thirdparty/1.0.1/hbase-thirdparty-1.0.1.pom (13 kB at 43 kB/s)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-module-scala_2.10/2.9.1/jackson-module-scala_2.10-2.9.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-module-scala_2.10/2.9.1/jackson-module-scala_2.10-2.9.1.pom (4.2 kB at 22 kB/s)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.9.1/jackson-core-2.9.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.9.1/jackson-core-2.9.1.pom (6.1 kB at 30 kB/s)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.9.1/jackson-parent-2.9.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.9.1/jackson-parent-2.9.1.pom (8.0 kB at 38 kB/s)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/30/oss-parent-30.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/30/oss-parent-30.pom (21 kB at 80 kB/s)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.9.1/jackson-annotations-2.9.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.9.1/jackson-annotations-2.9.1.pom (2.6 kB at 12 kB/s)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.9.1/jackson-databind-2.9.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.9.1/jackson-databind-2.9.1.pom (6.8 kB at 29 kB/s)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.9.1/jackson-bom-2.9.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.9.1/jackson-bom-2.9.1.pom (12 kB at 54 kB/s)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0.pom (1.9 kB at 10 kB/s)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.9.0/jackson-parent-2.9.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.9.0/jackson-parent-2.9.0.pom (7.8 kB at 32 kB/s)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/28/oss-parent-28.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/28/os
+{...}
 
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running Tp.myapp.AppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.074 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ myapp ---
+[INFO] Building jar: /home/hduser/Downloads/myapp/target/myapp-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 07:01 min
+[INFO] Finished at: 2021-02-25T13:16:39Z
+[INFO] Final Memory: 47M/112M
+[INFO] ------------------------------------------------------------------------
+```
+On copie le fichier __myapp-1.0-SNAPSHOT.jar__ dans le répertoir __/usr/local/spark :
+```sh
+hduser@mouadkamal-VirtualBox:~/Downloads/myapp/target$ ls
+classes            maven-archiver  myapp-1.0-SNAPSHOT.jar  test-classes
+generated-sources  maven-status    surefire-reports
+hduser@mouadkamal-VirtualBox:~/Downloads/myapp/target$ cp myapp-1.0-SNAPSHOT.jar /usr/local/spark/
 ```
