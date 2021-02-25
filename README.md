@@ -820,5 +820,9 @@ Et on aura le resultat suivant :
 ^X Exit        ^R Read File   ^\ Replace     ^U Uncut Text  ^T To Spell
 
 ```
+> Attention, il faut utiliser dans hbase-site.xml la même adresse configurée dans le 
+> fichier de configuration de hadoop : core-site.xml. (Dans ce TP, nous avons utilisé
+> localhost:54310 dans core-site.xml alors dans le fichier hbase-site.xml nous utilisons
+> aussi la même adresse localhost:54310).
 
 
