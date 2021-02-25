@@ -940,3 +940,26 @@ ROW                  COLUMN+CELL
  104                 column=ventes:produit, timestamp=1614219888198, value=Lits
 4 row(s) in 0.1380 seconds
 ```
+5- Affichons par exemple les valeurs de la colonne « produit » de la ligne 101 :
+```hbase
+hbase(main):020:0> get 'registre_ventes','101',{COLUMN => 'ventes:produit'}
+COLUMN               CELL                                                      
+ ventes:produit      timestamp=1614219840124, value=Chaises                    
+1 row(s) in 0.1380 seconds
+```
+6- Pour supprimer une table, il faut faire les étapes suivantes:
+```hbase
+hbase(main):021:0> disable 'registre_ventes'
+0 row(s) in 9.0880 seconds
+```
+puis :
+```hbase
+hbase(main):022:0> drop 'registre_ventes'
+0 row(s) in 4.6020 seconds
+```
+Et pour vérifier que la table n’existe plus, on tape :
+```hbase
+hbase(main):023:0> exists 'registre_ventes'
+Table registre_ventes does not exist                                           
+0 row(s) in 0.0110 seconds
+```
