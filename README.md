@@ -1074,3 +1074,45 @@ public class HelloHBase {
     }
 }
 ```
+Et on compile cette classe ci dissus :
+```sh
+hduser@mouadkamal-VirtualBox:~/Desktop/hbase-code$ javac HelloHBase.java
+```
+```sh
+hduser@mouadkamal-VirtualBox:~/Desktop/hbase-code$ java -cp .:/usr/local/hbase/lib/* HelloHBase
+log4j:WARN No appenders could be found for logger (org.apache.hadoop.util.Shell).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+connecting..
+Creating Table
+Done......
+Adding user: user1
+Adding user: user2
+reading data...
+mohamed
+```
+#### Chargement de fichiers :
+Il est possible de charger des fichiers volumineux dans la base HBase, à partir de HDFS. Pour cela, on va télécharger le ficher sur le lien :
+[https://www.dropbox.com/s/1aobaf5ibm5e7gm/purchases2.txt?dl=0](https://www.dropbox.com/s/1aobaf5ibm5e7gm/purchases2.txt?dl=0)
+1- On commence par charger le fichier dans le répertoire input de HDFS (mais d'abord,on créer ce répertoire car) :
+```sh
+hduser@mouadkamal-VirtualBox:~/Desktop/hbase-code$ hdfs dfs -mkdir -p /input
+21/02/25 03:15:18 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+```
+```sh
+hduser@mouadkamal-VirtualBox:~/Desktop/hbase-code$ hdfs dfs -ls /
+21/02/25 03:15:34 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Found 2 items
+drwxr-xr-x   - hduser supergroup          0 2021-02-25 03:05 /hbase
+drwxr-xr-x   - hduser supergroup          0 2021-02-25 03:15 /input
+```
+```sh
+hduser@mouadkamal-VirtualBox:~/Desktop/hbase-code$ hdfs dfs -put /home/hduser/Downloads/purchases2.txt /input
+21/02/25 10:49:21 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+```
+```sh
+hduser@mouadkamal-VirtualBox:~/Desktop/hbase-code$ hdfs dfs -ls -R /input
+21/02/25 10:49:51 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+-rw-r--r--   1 hduser supergroup  243309628 2021-02-25 10:49 /input/purchases2.txt
+```
+
