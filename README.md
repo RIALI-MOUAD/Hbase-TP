@@ -879,3 +879,64 @@ hbase(main):001:0> create 'registre_ventes','client','ventes'
 => Hbase::Table - registre_ventes
 hbase(main):002:0> 
 ```
+2- On vérifier que la table est bien créée:
+```hbase
+hbase(main):002:0> list
+TABLE                                                                          
+registre_ventes                                                                
+1 row(s) in 0.0560 seconds
+
+=> ["registre_ventes"]
+hbase(main):003:0> 
+```
+3- On insére les différentes lignes de la table « registre_ventes » en tapant :
+```text
+put 'registre_ventes', '101', 'client:nom', 'Mohamed A'
+put 'registre_ventes', '101', 'client:ville', 'Casablanca'
+put 'registre_ventes', '101', 'ventes:produit', 'Chaises'
+put 'registre_ventes', '101', 'ventes:montant', '2000,00 MAD'
+put 'registre_ventes', '102', 'client:nom', 'Amine B'
+put 'registre_ventes', '102', 'client:ville', 'Salé'
+put 'registre_ventes', '102', 'ventes:produit', 'Lampes'
+put 'registre_ventes', '102', 'ventes:montant', '300,00 MAD'
+put 'registre_ventes', '103', 'client:nom', 'Younes C'
+put 'registre_ventes', '103', 'client:ville', 'Rabat'
+put 'registre_ventes', '103', 'ventes:produit', 'Bureaux'
+put 'registre_ventes', '103', 'ventes:montant', '10000,00 MAD'
+put 'registre_ventes', '104', 'client:nom', 'Othman D'
+put 'registre_ventes', '104', 'client:ville', 'Tanger'
+put 'registre_ventes', '104', 'ventes:produit', 'Lits'
+put 'registre_ventes', '104', 'ventes:montant', '15000,00 MAD'
+```
+3- On visualise le résultat de l'insertion :
+```hbase
+hbase(main):019:0> scan 'registre_ventes'
+ROW                  COLUMN+CELL                                               
+ 101                 column=client:nom, timestamp=1614219839945, value=Mohamed 
+                     A                                                         
+ 101                 column=client:ville, timestamp=1614219840035, value=Casabl
+                     anca                                                      
+ 101                 column=ventes:montant, timestamp=1614219858522, value=2000
+                     ,00 MAD                                                   
+ 101                 column=ventes:produit, timestamp=1614219840124, value=Chai
+                     ses                                                       
+ 102                 column=client:nom, timestamp=1614219861908, value=Amine B 
+ 102                 column=client:ville, timestamp=1614219861976, value=Sal\xC
+                     3\xA9                                                     
+ 102                 column=ventes:montant, timestamp=1614219863731, value=300,
+                     00 MAD                                                    
+ 102                 column=ventes:produit, timestamp=1614219862035, value=Lamp
+                     es                                                        
+ 103                 column=client:nom, timestamp=1614219874494, value=Younes C
+ 103                 column=client:ville, timestamp=1614219874554, value=Rabat 
+ 103                 column=ventes:montant, timestamp=1614219876108, value=1000
+                     0,00 MAD                                                  
+ 103                 column=ventes:produit, timestamp=1614219874607, value=Bure
+                     aux                                                       
+ 104                 column=client:nom, timestamp=1614219888032, value=Othman D
+ 104                 column=client:ville, timestamp=1614219888087, value=Tanger
+ 104                 column=ventes:montant, timestamp=1614219888885, value=1500
+                     0,00 MAD                                                  
+ 104                 column=ventes:produit, timestamp=1614219888198, value=Lits
+4 row(s) in 0.1380 seconds
+```
