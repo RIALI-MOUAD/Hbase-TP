@@ -864,4 +864,18 @@ hbase(main):001:0> status
 
 ```
 
+### 2- Manipulation de « HBase » :
+#### 1-Création d’une BD :
+Toujours en mode "pseudo-distribue" on lance le shell :
+```sh
+hduser@mouadkamal-VirtualBox:/usr/local/hbase$ hbase shell
+```
+1- On crée la table, ainsi que les familles de colonnes associées :
+create 'registre_ventes','client','ventes'
+```hbase
+hbase(main):001:0> create 'registre_ventes','client','ventes'
+0 row(s) in 10.1210 seconds
 
+=> Hbase::Table - registre_ventes
+hbase(main):002:0> 
+```
