@@ -1115,4 +1115,113 @@ hduser@mouadkamal-VirtualBox:~/Desktop/hbase-code$ hdfs dfs -ls -R /input
 21/02/25 10:49:51 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
 -rw-r--r--   1 hduser supergroup  243309628 2021-02-25 10:49 /input/purchases2.txt
 ```
+2- On Crée la base products avec une famille de colonnes ‘cf’(Hbase shell) :
+```hbase
+hbase(main):002:0> create 'products','cf'
+0 row(s) in 9.2770 seconds
+
+=> Hbase::Table - products
+hbase(main):003:0> exit
+```
+3- On exécute la commande suivante. ImportTsv est une utilité qui permet de charger des données au format tsv dans HBase. Elle permet de déclencher une opération MapReduce sur le fichier principal stocké dans HDFS, pour lire les données puis les insérer via des put dans la base.
+
+```sh
+hduser@mouadkamal-VirtualBox:/usr/local/hbase$ hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.separator=',' -Dimporttsv.columns=HBASE_ROW_KEY,cf:date,cf:time,cf:town,cf:product,cf:price,cf:payment products /input
+```
+output : 
+```sh
+2021-02-25 11:14:41,118 WARN  [main] util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/local/hbase/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/hadoop/share/hadoop/common/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+2021-02-25 11:14:42,778 INFO  [main] zookeeper.RecoverableZooKeeper: Process identifier=hconnection-0x3fc2959f connecting to ZooKeeper ensemble=localhost:2181
+2021-02-25 11:14:42,807 INFO  [main] zookeeper.ZooKeeper: Client environment:zookeeper.version=3.4.10-39d3a4f269333c922ed3db283be479f9deacaa0f, built on 03/23/2017 10:13 GMT
+{...}
+2021-02-25 11:14:54,838 INFO  [main] mapreduce.Job:  map 0% reduce 0%
+2021-02-25 11:15:00,329 INFO  [communication thread] mapred.LocalJobRunner: map > map
+2021-02-25 11:15:01,029 INFO  [main] mapreduce.Job:  map 1% reduce 0%
+2021-02-25 11:15:03,330 INFO  [communication thread] mapred.LocalJobRunner: map > map
+2021-02-25 11:15:04,154 INFO  [main] mapreduce.Job:  map 2% reduce 0%
+2021-02-25 11:15:06,336 INFO  [communication thread] mapred.LocalJobRunner: map > map
+2021-02-25 11:15:09,363 INFO  [communication thread] mapred.LocalJobRunner: map > map
+2021-02-25 11:15:10,209 INFO  [main] mapreduce.Job:  map 3% reduce 0%
+2021-02-25 11:15:12,375 INFO  [communication thread] mapred.LocalJobRunner: map > map
+2021-02-25 11:15:13,226 INFO  [main] mapreduce.Job:  map 5% reduce 0%
+2021-02-25 11:15:15,394 INFO  [communication thread] mapred.LocalJobRunner: map > map
+2021-02-25 11:15:18,402 INFO  [communication thread] mapred.LocalJobRunner: map > map
+2021-02-25 11:15:19,318 INFO  [main] mapreduce.Job:  map 6% reduce 0%
+2021-02-25 11:15:21,414 INFO  [communication thread] mapred.LocalJobRunner: map > map
+2021-02-25 11:15:22,349 INFO  [main] mapreduce.Job:  map 7% reduce 0%
+2021-02-25 11:15:24,418 INFO  [communication thread] mapred.LocalJobRunner: map > map
+2021-02-25 11:15:25,393 INFO  [main] mapreduce.Job:  map 8% reduce 0%
+2021-02-25 11:15:27,424 INFO  [communication thread] mapred.LocalJobRunner: map > map
+2021-02-25 11:15:28,418 INFO  [main] mapreduce.Job:  map 10% reduce 0%
+2021-02-25 11:15:30,434 INFO  [communication thread] mapred.LocalJobRunner: map > map
+2021-02-25 11:15:33,449 INFO  [communication thread] mapred.LocalJobRunner: map > map
+2021-02-25 11:15:34,457 INFO  [main] mapreduce.Job:  map 11% reduce 0%
+2021-02-25 11:15:36,454 INFO  [communication thread] mapred.LocalJobRunner: map > map
+2021-02-25 11:15:36,499 INFO  [main] mapreduce.Job:  map 13% reduce 0%
+2021-02-25 11:15:39,496 INFO  [communication thread] mapred.LocalJobRunner: map > map
+2021-02-25 11:15:39,574 INFO  [main] mapreduce.Job:  map 14% reduce 0%
+2021-02-25 11:15:42,532 INFO  [communication thread] mapred.LocalJobRunner: map > map
+2021-02-25 11:15:43,092 INFO  [main] mapreduce.Job:  map 15% reduce 0%
+2021-02-25 11:15:45,549 INFO  [communication thread] mapred.LocalJobRunner: map > map
+2021-02-25 11:15:46,141 INFO  [main] mapreduce.Job:  map 16% reduce 0%
+2021-02-25 11:15:48,557 INFO  [communication thread] mapred.LocalJobRunner: map > map
+2021-02-25 11:15:49,185 INFO  [main] mapreduce.Job:  map 18% reduce 0%
+2021-02-25 11:15:51,567 INFO  [communication thread] mapred.LocalJobRunner: map > map
+2021-02-25 11:15:52,206 INFO  [main] mapreduce.Job:  map 19% reduce 0%
+2021-02-25 11:15:54,568 INFO  [communication thread] mapred.LocalJobRunner: map > map
+{...}
+ > map
+2021-02-25 11:18:51,445 INFO  [main] mapreduce.Job:  map 70% reduce 0%
+2021-02-25 11:18:53,661 INFO  [communication thread] mapred.LocalJobRunner: map > map
+2021-02-25 11:18:54,469 INFO  [main] mapreduce.Job:  map 71% reduce 0%
+2021-02-25 11:18:56,674 INFO  [communication thread] mapred.LocalJobRunner: map > map
+2021-02-25 11:18:57,498 INFO  [main] mapreduce.Job:  map 72% reduce 0%
+2021-02-25 11:18:59,681 INFO  [communication thread] mapred.LocalJobRunner: map > map
+2021-02-25 11:19:00,620 INFO  [main] mapreduce.Job:  map 74% reduce 0%
+2021-02-25 11:19:02,702 INFO  [communication thread] mapred.LocalJobRunner: map > map
+2021-02-25 11:19:03,642 INFO  [main] mapreduce.Job:  map 75% reduce 0%
+2021-02-25 11:19:05,703 INFO  [communication thread] mapred.LocalJobRunner: map > map
+2021-02-25 11:19:06,684 INFO  [main] mapreduce.Job:  map 76% reduce 0%
+2021-02-25 11:19:08,714 INFO  [communication thread] mapred.LocalJobRunner: map > map
+{...}
+2021-02-25 11:19:57,758 INFO  [LocalJobRunner Map Task Executor #0] mapred.LocalJobRunner: map
+2021-02-25 11:19:57,758 INFO  [LocalJobRunner Map Task Executor #0] mapred.Task: Task 'attempt_local449278986_0001_m_000001_0' done.
+2021-02-25 11:19:57,758 INFO  [LocalJobRunner Map Task Executor #0] mapred.LocalJobRunner: Finishing task: attempt_local449278986_0001_m_000001_0
+2021-02-25 11:19:57,848 INFO  [Thread-46] mapred.LocalJobRunner: map task executor complete.
+2021-02-25 11:19:58,450 INFO  [main] mapreduce.Job: Job job_local449278986_0001 completed successfully
+2021-02-25 11:20:02,147 INFO  [main] mapreduce.Job: Counters: 21
+	File System Counters
+		FILE: Number of bytes read=60102777
+		FILE: Number of bytes written=61280880
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=377535548
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=7
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=0
+	Map-Reduce Framework
+		Map input records=4138476
+		Map output records=4138476
+		Input split bytes=216
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=32617
+		Total committed heap usage (bytes)=172281856
+	ImportTsv
+		Bad Lines=0
+	File Input Format Counters 
+		Bytes Read=243313724
+	File Output Format Counters 
+		Bytes Written=0
+```
+
+
 
