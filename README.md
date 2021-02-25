@@ -1525,10 +1525,44 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 [INFO] Final Memory: 47M/112M
 [INFO] ------------------------------------------------------------------------
 ```
-On copie le fichier __myapp-1.0-SNAPSHOT.jar__ dans le répertoir __/usr/local/spark :
+On copie le fichier __myapp-1.0-SNAPSHOT.jar__ dans le répertoir __/usr/local/spark__ :
 ```sh
 hduser@mouadkamal-VirtualBox:~/Downloads/myapp/target$ ls
 classes            maven-archiver  myapp-1.0-SNAPSHOT.jar  test-classes
 generated-sources  maven-status    surefire-reports
 hduser@mouadkamal-VirtualBox:~/Downloads/myapp/target$ cp myapp-1.0-SNAPSHOT.jar /usr/local/spark/
+```
+On copie tous les fichiers de la bibliothèque hbase dans le répertoire jars de spark:
+```sh
+hduser@mouadkamal-VirtualBox:~/Downloads/myapp/target$ cp -r /usr/local/hbase/lib/* /usr/local/spark/jars
+```
+On exécute ce fichier grâce à spark-submit comme suit :
+```sh
+hduser@mouadkamal-VirtualBox:/usr/local/spark$ spark-submit --class TaseSparkProcess myapp-1.0-SNAPSHOT.jar
+```
+output:
+```sh
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/local/spark/jars/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/spark/jars/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+21/02/25 13:30:16 WARN util.Utils: Your hostname, mouadkamal-VirtualBox resolves to a loopback address: 127.0.0.1; using 10.0.2.15 instead (on interface enp0s3)
+21/02/25 13:30:16 WARN util.Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+21/02/25 13:30:23 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+21/02/25 13:30:25 INFO spark.SparkContext: Running Spark version 2.4.3
+21/02/25 13:30:25 INFO spark.SparkContext: Submitted application: SparkHBaseTest
+{...}
+21/02/25 13:32:55 INFO spark.SparkContext: Invoking stop() from shutdown hook
+21/02/25 13:32:55 INFO server.AbstractConnector: Stopped Spark@2780f7da{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+21/02/25 13:32:55 INFO ui.SparkUI: Stopped Spark web UI at http://10.0.2.15:4040
+21/02/25 13:32:57 INFO spark.MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+21/02/25 13:32:58 INFO memory.MemoryStore: MemoryStore cleared
+21/02/25 13:32:58 INFO storage.BlockManager: BlockManager stopped
+21/02/25 13:32:58 INFO storage.BlockManagerMaster: BlockManagerMaster stopped
+21/02/25 13:32:58 INFO scheduler.OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+21/02/25 13:32:59 INFO spark.SparkContext: Successfully stopped SparkContext
+21/02/25 13:32:59 INFO util.ShutdownHookManager: Shutdown hook called
+21/02/25 13:32:59 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-94d4ec4a-b523-4d13-bf56-5538a7fcb82f
+21/02/25 13:32:59 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-ef905603-8c75-4828-a9e9-5f84ffbec045
 ```
