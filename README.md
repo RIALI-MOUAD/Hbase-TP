@@ -1236,3 +1236,6 @@ COLUMN               CELL
 1 row(s) in 0.2830 seconds
 ```
 ### 4- Traitement de données avec Spark :
+#### Préparation de l’environnement :
+##### 1- On télécharge maven-3.5.0 :
+![](https://maven.apache.org/images/maven-logo-black-on-white.png)
