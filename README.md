@@ -963,3 +963,41 @@ hbase(main):023:0> exists 'registre_ventes'
 Table registre_ventes does not exist                                           
 0 row(s) in 0.0110 seconds
 ```
+### 3- L’utilisation de l’API Java de HBase :
+Pour compiler sans problèmes notre code java, il faut inclure les librairies de Hbase le classpath par défaut,
+grâce à la variable d'environnement $CLASSPATH, pour cela, on l'ajoute dans le fichier **.bashrc** :
+```sh
+export CLASSPATH=/usr/local/hbase/lib/*:/usr/local/hadoop/share/hadoop/common/*
+```
+d'ou l'ensemble des lignes ajoutees est:
+```sh
+export JAVA_HOME=/opt/java/jdk1.8.0_71/
+export JRE_HOME=/opt/java/jdk1.8.0._71/jre
+export PATH=$PATH:/opt/java/jdk1.8.0_71/bin:/opt/java/jdk1.8.0_71/jre/bin
+#HADOOP VARIABLES START
+export JAVA_HOME=/opt/java/jdk1.8.0_71/
+export HADOOP_INSTALL=/usr/local/hadoop
+export PATH=$PATH:$HADOOP_INSTALL/bin
+export PATH=$PATH:$HADOOP_INSTALL/sbin
+export HADOOP_MAPRED_HOME=$HADOOP_INSTALL
+export HADOOP_COMMON_HOME=$HADOOP_INSTALL
+export HADOOP_HDFS_HOME=$HADOOP_INSTALL
+export YARN_HOME=$HADOOP_INSTALL
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_INSTALL/lib/native
+#export HADOOP_OPTS="­Djava.library.path=$HADOOP_INSTALL/lib"
+#HADOOP VARIABLES END
+export SPARK_HOME=/usr/local/spark
+export PATH=$PATH:$SPARK_HOME/bin
+
+export HBASE_HOME=/usr/local/hbase
+export PATH=$PATH:$HBASE_HOME/bin
+
+export CLASSPATH=/usr/local/hbase/lib/*:/usr/local/hadoop/share/hadoop/common/*
+
+
+
+
+^G Get Help    ^O Write Out   ^W Where Is    ^K Cut Text    ^J Justify
+^X Exit        ^R Read File   ^\ Replace     ^U Uncut Text  ^T To Spell
+
+```
