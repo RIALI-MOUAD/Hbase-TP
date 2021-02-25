@@ -1372,43 +1372,43 @@ Dans le fichier ***pom.xml*** et apres tout les ajouts, on va trouver:
 	<name>myapp</name>
 	<url>http://maven.apache.org</url>
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<build>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<configuration>
-						<source>1.8</source>
-						<target>1.8</target>
-					</configuration>
-				</plugin>
-			</plugins>
-		</build>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+        <build>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<configuration>
+				<source>1.8</source>
+				<target>1.8</target>
+			</configuration>
+		</plugin>
+	</plugins>
+	</build>
 	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.hbase</groupId>
-			<artifactId>hbase</artifactId>
-			<version>2.1.3</version>
-			<type>pom</type>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.hbase</groupId>
-			<artifactId>hbase-spark</artifactId>
-			<version>2.0.0-alpha4</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.spark</groupId>
-			<artifactId>spark-core_2.11</artifactId>
-			<version>2.2.1</version>
-		</dependency>
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>3.8.1</version>
+		<scope>test</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.hbase</groupId>
+		<artifactId>hbase</artifactId>
+		<version>2.1.3</version>
+		<type>pom</type>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.hbase</groupId>
+		<artifactId>hbase-spark</artifactId>
+		<version>2.0.0-alpha4</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.spark</groupId>
+		<artifactId>spark-core_2.11</artifactId>
+		<version>2.2.1</version>
+	</dependency>
 	</dependencies>
 </project>
 ```
