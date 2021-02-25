@@ -1223,5 +1223,16 @@ SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
 		Bytes Written=0
 ```
 
+On vérifie que la base a bien été créée en consultant la ville de l'enregistrement numéro 2000:
+```hbase
 
+hbase(main):001:0> exists 'products'
+Table products does exist                                                      
+0 row(s) in 0.6750 seconds
 
+hbase(main):002:0> get 'products','2000',{COLUMN => 'cf:town'}
+COLUMN               CELL                                                      
+ cf:town             timestamp=1614251680878, value=Oklahoma City              
+1 row(s) in 0.2830 seconds
+```
+### 4- Traitement de données avec Spark :
