@@ -1358,3 +1358,94 @@ Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-util
 [INFO] Final Memory: 18M/46M
 [INFO] ------------------------------------------------------------------------
 ```
+Dans le fichier ***pom.xml*** et apres tout les ajouts, on va trouver:
+```xml
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>Tp.myapp</groupId>
+	<artifactId>myapp</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>myapp</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<build>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>1.8</source>
+						<target>1.8</target>
+					</configuration>
+				</plugin>
+			</plugins>
+		</build>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.hbase</groupId>
+			<artifactId>hbase</artifactId>
+			<version>2.1.3</version>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.hbase</groupId>
+			<artifactId>hbase-spark</artifactId>
+			<version>2.0.0-alpha4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-core_2.11</artifactId>
+			<version>2.2.1</version>
+		</dependency>
+	</dependencies>
+</project>
+```
+On renomme ***App.java*** en ***HbaseSparkProcess.java*** :
+```sh
+hduser@mouadkamal-VirtualBox:~/Downloads/myapp/src/main/java/Tp/myapp$ mv App.java HbaseSparkProcess.java
+```
+```sh
+hduser@mouadkamal-VirtualBox:~/Downloads/myapp/src/main/java/Tp/myapp$ mv App.java HbaseSparkProcess.java
+hduser@mouadkamal-VirtualBox:~/Downloads/myapp/src/main/java/Tp/myapp$ sudo nano HbaseSparkProcess.java
+[sudo] password for hduser: 
+hduser@mouadkamal-VirtualBox:~/Downloads/myapp/src/main/java/Tp/myapp$ 
+```
+```java
+package Tp.myapp;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.hbase.HBaseConfiguration;
+import org.apache.hadoop.hbase.client.Result;
+import org.apache.hadoop.hbase.io.ImmutableBytesWritable;
+import org.apache.hadoop.hbase.mapreduce.TableInputFormat;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaPairRDD;
+import org.apache.spark.api.java.JavaSparkContext;
+public class HbaseSparkProcess {
+  public void createHbaseTable() {
+    Configuration config = HBaseConfiguration.create();
+    SparkConf sparkConf = new
+    SparkConf().setAppName("SparkHBaseTest").setMaster("local[4]");
+    JavaSparkContext jsc = new JavaSparkContext(sparkConf);
+    config.set(TableInputFormat.INPUT_TABLE, "products");
+    JavaPairRDD < ImmutableBytesWritable,
+    Result > hBaseRDD = jsc.newAPIHadoopRDD(config, TableInputFormat.class, ImmutableBytesWritable.class, Result.class);
+    System.out.println("nombre d'enregistrements: " + hBaseRDD.count());
+  }
+  public static void main(String[] args) {
+    HbaseSparkProcess admin = new HbaseSparkProcess();
+    admin.createHbaseTable();
+  }
+}
+```
