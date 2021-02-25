@@ -1239,3 +1239,5 @@ COLUMN               CELL
 #### Préparation de l’environnement :
 ##### 1- On télécharge maven-3.5.0 :
 ![](https://maven.apache.org/images/maven-logo-black-on-white.png)
+[![](https://img.shields.io/badge/version-3.0.5-green.svg)](https://archive.apache.org/dist/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz)
+[![Generic badge](https://img.shields.io/badge/size-8.1MB-green.svg)](https://shields.io/)
