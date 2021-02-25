@@ -1295,3 +1295,42 @@ Default locale: en_US, platform encoding: UTF-8
 OS name: "linux", version: "5.3.0-28-generic", arch: "amd64", family: "unix"
 hduser@mouadkamal-VirtualBox:~/Downloads$ 
 ```
+#### 2- On crée un projet Maven avec la commande suivante :
+```sh
+hduser@mouadkamal-VirtualBox:~/Downloads$ mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.1
+```
+output : 
+```sh
+[INFO] Scanning for projects...
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/2.5/maven-clean-plugin-2.5.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/2.5/maven-clean-plugin-2.5.pom (3.9 kB at 824 B/s)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/22/maven-plugins-22.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/22/maven-plugins-22.pom (13 kB at 44 kB/s)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/21/maven-parent-21.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/21/maven-parent-21.pom (26 kB at 89 kB/s)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/apache/10/apache-10.pom
+{...}
+groupId: Tp.myapp
+artifactId: myapp
+version: 1.0-SNAPSHOT
+package: Tp.myapp
+ Y: : Y
+[INFO] ----------------------------------------------------------------------------
+[INFO] Using following parameters for creating project from Old (1.x) Archetype: maven-archetype-quickstart:1.1
+[INFO] ----------------------------------------------------------------------------
+[INFO] Parameter: basedir, Value: /home/hduser/Downloads
+[INFO] Parameter: package, Value: Tp.myapp
+[INFO] Parameter: groupId, Value: Tp.myapp
+[INFO] Parameter: artifactId, Value: myapp
+[INFO] Parameter: packageName, Value: Tp.myapp
+[INFO] Parameter: version, Value: 1.0-SNAPSHOT
+[INFO] project created from Old (1.x) Archetype in dir: /home/hduser/Downloads/myapp
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 03:45 min
+[INFO] Finished at: 2021-02-25T12:01:48Z
+[INFO] Final Memory: 16M/46M
+[INFO] ------------------------------------------------------------------------
+hduser@mouadkamal-VirtualBox:~/Downloads$ 
+```
