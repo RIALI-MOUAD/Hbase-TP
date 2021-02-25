@@ -779,8 +779,8 @@ hduser@mouadkamal-VirtualBox:/usr/local/hbase/conf$ sudo nano hbase-site.xml
 <value>hdfs://localhost:54310/hbase</value>
 </property>
 <property>
-<name>hbase.zookeeper.property.dataDir</name>
-<value>hdfs://localhost:54310/hduser/zookeeper</value>
+<name>hbase.zookeeper.quorum</name>
+<value>localhost</value>
 </property>
 <property>
 <name>hbase.cluster.distributed</name>
@@ -807,8 +807,8 @@ Et on aura le resultat suivant :
   <value>hdfs://localhost:54310/hbase</value>
  </property>
  <property>
-  <name>hbase.zookeeper.property.dataDir</name>
-  <value>hdfs://localhost:54310/hduser/zookeeper</value>
+  <name>hbase.zookeeper.quorum</name>
+  <value>localhost</value>
  </property>
  <property>
   <name>hbase.cluster.distributed</name>
@@ -824,5 +824,13 @@ Et on aura le resultat suivant :
 > fichier de configuration de hadoop : core-site.xml. (Dans ce TP, nous avons utilisé
 > localhost:54310 dans core-site.xml alors dans le fichier hbase-site.xml nous utilisons
 > aussi la même adresse localhost:54310).
+>
+On peut s'assurer de port convenable en tapant la commande suivante :
+```sh
+hduser@mouadkamal-VirtualBox:/usr/local/hbase/conf$ hdfs getconf -confKey fs.defaultFS
+21/02/25 02:05:55 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+hdfs://localhost:54310
+```
+
 
 
