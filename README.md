@@ -742,6 +742,83 @@ hduser@mouadkamal-VirtualBox:/usr/local/hbase$ ./bin/stop-hbase.sh
 stopping hbase........................
 hduser@mouadkamal-VirtualBox:/usr/local/hbase$ 
 ```
+#### 5- Configuration d’Apache Hbase en mode « Pseudo-distribué » :
+##### 1- Création des fichiers nécessaires pour Hbase dans le HDFS :
+pour bien faire cette tache, il faut s'assurer que Hadoop est bien connecte :
+```sh
+hduser@mouadkamal-VirtualBox:/usr/local/hbase$ hadoop fs -mkdir -p /hbase
+21/02/25 00:45:01 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+hduser@mouadkamal-VirtualBox:/usr/local/hbase$ ls
+bin          conf  file:          LEGAL  LICENSE.txt  NOTICE.txt
+CHANGES.txt  docs  hbase-webapps  lib    logs         README.txt
+```
+```sh
+hduser@mouadkamal-VirtualBox:/usr/local/hbase$ hadoop fs -mkdir -p /hduser/zookeeper
+21/02/25 00:46:26 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+```
+On vérifie avec la commande suivante que les répértoires sont bien créés :
+```sh
+hduser@mouadkamal-VirtualBox:/usr/local/hbase$ cd ../hadoop/etc/hadoop
+hduser@mouadkamal-VirtualBox:/usr/local/hadoop/etc/hadoop$ hadoop fs -ls /
+21/02/25 00:48:44 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Found 2 items
+drwxr-xr-x   - hduser supergroup          0 2021-02-25 00:45 /hbase
+drwxr-xr-x   - hduser supergroup          0 2021-02-25 00:46 /hduser
+```
+Pour installer HBase en mode pseudo-distribué, on ajoute les lignes suivantes dans le « hbase-site.xml » :
+> On accede d'abord au rep /usr/local/hbase/conf :
+```sh
+hduser@mouadkamal-VirtualBox:/usr/local/hadoop/etc/hadoop$ cd ../../../hbase
+hduser@mouadkamal-VirtualBox:/usr/local/hbase$ cd conf
+hduser@mouadkamal-VirtualBox:/usr/local/hbase/conf$ sudo nano hbase-site.xml
+```
+> Puis on ajoute les lignes suivantes au fichier ***hbase-site.xml***
+```xml
+<property>
+<name>hbase.rootdir</name>
+<value>hdfs://localhost:54310/hbase</value>
+</property>
+<property>
+<name>hbase.zookeeper.property.dataDir</name>
+<value>hdfs://localhost:54310/hduser/zookeeper</value>
+</property>
+<property>
+<name>hbase.cluster.distributed</name>
+<value>true</value>
+</property>
+```
+Et on aura le resultat suivant :
+```xml
+  GNU nano 2.9.3                   hbase-site.xml                    Modified  
 
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<configuration>
+ <property>
+  <name>hbase.rootdir</name>
+  <value>hdfs://localhost:54310/hbase</value>
+ </property>
+ <property>
+  <name>hbase.zookeeper.property.dataDir</name>
+  <value>hdfs://localhost:54310/hduser/zookeeper</value>
+ </property>
+ <property>
+  <name>hbase.cluster.distributed</name>
+  <value>true</value>
+ </property>
+</configuration>
+
+^G Get Help    ^O Write Out   ^W Where Is    ^K Cut Text    ^J Justify
+^X Exit        ^R Read File   ^\ Replace     ^U Uncut Text  ^T To Spell
+
+```
 
 
