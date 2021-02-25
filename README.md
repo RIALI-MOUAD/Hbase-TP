@@ -1553,6 +1553,7 @@ SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
 21/02/25 13:30:25 INFO spark.SparkContext: Running Spark version 2.4.3
 21/02/25 13:30:25 INFO spark.SparkContext: Submitted application: SparkHBaseTest
 {...}
+nombre d'enregistrements: 4138476
 21/02/25 13:32:55 INFO spark.SparkContext: Invoking stop() from shutdown hook
 21/02/25 13:32:55 INFO server.AbstractConnector: Stopped Spark@2780f7da{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
 21/02/25 13:32:55 INFO ui.SparkUI: Stopped Spark web UI at http://10.0.2.15:4040
@@ -1566,3 +1567,4 @@ SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
 21/02/25 13:32:59 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-94d4ec4a-b523-4d13-bf56-5538a7fcb82f
 21/02/25 13:32:59 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-ef905603-8c75-4828-a9e9-5f84ffbec045
 ```
+
