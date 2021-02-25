@@ -1449,3 +1449,7 @@ public class HbaseSparkProcess {
   }
 }
 ```
+On enregistre HbaseSparkProcess.java, et on lance la commande :
+```sh
+
+```
