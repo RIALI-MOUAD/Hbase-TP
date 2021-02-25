@@ -656,7 +656,7 @@ Pour installer HBase en mode Standalone, on ajoute les lignes suivantes dans le 
  </property>
  <property>
    <name>hbase.zookeeper.property.dataDir</name>
-   <value>/home/mouad-kamal/zookeeper</value>
+   <value>file:///home/mouad-kamal/zookeeper</value>
  </property>
  <property>
    <name>hbase.unsafe.stream.capability.enforce</name>
