@@ -737,6 +737,7 @@ hbase(main):001:0> status
 hbase(main):002:0> 
 ```
 ![](https://github.com/RIALI-MOUAD/Hbase-Media/blob/main/HbaseShell.png?raw=true)
+
 Then we stop Hbase Master :
 ```sh
 hduser@mouadkamal-VirtualBox:/usr/local/hbase$ ./bin/stop-hbase.sh
@@ -867,6 +868,7 @@ hbase(main):001:0> status
 
 ```
 ![](https://github.com/RIALI-MOUAD/Hbase-Media/blob/main/HbaseSitePseudoDistrShell.png?raw=true)
+
 ### 2- Manipulation de « HBase » :
 #### 1-Création d’une BD :
 Toujours en mode "pseudo-distribue" on lance le shell :
@@ -944,6 +946,7 @@ ROW                  COLUMN+CELL
 4 row(s) in 0.1380 seconds
 ```
 ![](https://github.com/RIALI-MOUAD/Hbase-Media/blob/main/HbasePDistrShellBDResultat.png?raw=true)
+
 5- Affichons par exemple les valeurs de la colonne « produit » de la ligne 101 :
 ```hbase
 hbase(main):020:0> get 'registre_ventes','101',{COLUMN => 'ventes:produit'}
@@ -968,6 +971,7 @@ Table registre_ventes does not exist
 0 row(s) in 0.0110 seconds
 ```
 ![](https://github.com/RIALI-MOUAD/Hbase-Media/blob/main/HbasePDistrShellBDResultat2.png?raw=true)
+
 ### 3- L’utilisation de l’API Java de HBase :
 Pour compiler sans problèmes notre code java, il faut inclure les librairies de Hbase le classpath par défaut,
 grâce à la variable d'environnement $CLASSPATH, pour cela, on l'ajoute dans le fichier **.bashrc** :
@@ -1080,6 +1084,7 @@ public class HelloHBase {
 }
 ```
 ![](https://github.com/RIALI-MOUAD/Hbase-Media/blob/main/HelloHBase.png?raw=true)
+
 Et on compile cette classe ci dissus :
 ```sh
 hduser@mouadkamal-VirtualBox:~/Desktop/hbase-code$ javac HelloHBase.java
@@ -1098,6 +1103,7 @@ reading data...
 mohamed
 ```
 ![](https://github.com/RIALI-MOUAD/Hbase-Media/blob/main/HelloHBaseCompilation.png?raw=true)
+
 #### Chargement de fichiers :
 Il est possible de charger des fichiers volumineux dans la base HBase, à partir de HDFS. Pour cela, on va télécharger le ficher sur le lien :
 [https://www.dropbox.com/s/1aobaf5ibm5e7gm/purchases2.txt?dl=0](https://www.dropbox.com/s/1aobaf5ibm5e7gm/purchases2.txt?dl=0)
@@ -1131,6 +1137,7 @@ hbase(main):002:0> create 'products','cf'
 hbase(main):003:0> exit
 ```
 ![](https://github.com/RIALI-MOUAD/Hbase-Media/blob/main/LoadFiles.png?raw=true)
+
 3- On exécute la commande suivante. ImportTsv est une utilité qui permet de charger des données au format tsv dans HBase. Elle permet de déclencher une opération MapReduce sur le fichier principal stocké dans HDFS, pour lire les données puis les insérer via des put dans la base.
 
 ```sh
@@ -1231,6 +1238,7 @@ SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
 		Bytes Written=0
 ```
 ![](https://github.com/RIALI-MOUAD/Hbase-Media/blob/main/LoadFilesMapReduce.png?raw=true)
+
 On vérifie que la base a bien été créée en consultant la ville de l'enregistrement numéro 2000:
 ```hbase
 
@@ -1244,6 +1252,7 @@ COLUMN               CELL
 1 row(s) in 0.2830 seconds
 ```
 ![](https://github.com/RIALI-MOUAD/Hbase-Media/blob/main/LoadFilesVerifyExist.png?raw=true)
+
 ### 4- Traitement de données avec Spark :
 #### Préparation de l’environnement :
 ##### 1- On télécharge maven-3.5.0 :
@@ -1537,6 +1546,7 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 [INFO] ------------------------------------------------------------------------
 ```
 ![](https://github.com/RIALI-MOUAD/Hbase-Media/blob/main/mavenProjectPackage.png?raw=true)
+
 On copie le fichier __myapp-1.0-SNAPSHOT.jar__ dans le répertoir __/usr/local/spark__ :
 ```sh
 hduser@mouadkamal-VirtualBox:~/Downloads/myapp/target$ ls
